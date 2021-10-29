@@ -26,7 +26,12 @@ const items = [
     },
 ]
 
-export default function MenuButtons() {
+export default function MenuButtons({navigation}) {
+
+    const openMeeting = () => {
+        navigation.navigate('Room')
+    }
+
     return (
         <View style={styles.container}>
            {/* One Menu */}
@@ -35,7 +40,7 @@ export default function MenuButtons() {
                 items.map((item,index) => (
 
             <View style={styles.buttonContainer} key={index}>
-                <TouchableOpacity style={styles.button}>
+                <TouchableOpacity style={styles.button} onPress={openMeeting}>
                     <FontAwesome name={item.name} size={23} color={'#efefef'} />
                 </TouchableOpacity>
                 <Text style={styles.menuText}>{item.title}</Text>
