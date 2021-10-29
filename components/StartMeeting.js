@@ -1,7 +1,7 @@
 import React from 'react'
 import { StyleSheet, Text, View ,TextInput ,TouchableOpacity } from 'react-native'
 
-export default function StartMeeting({name,setname,roomId,setroomId}) {
+export default function StartMeeting({name,setname,roomId,setroomId,joinRoom}) {
     return (
                 <View style={styles.startMeetingContainer}>
                 <View style={styles.info}> 
@@ -27,7 +27,7 @@ export default function StartMeeting({name,setname,roomId,setroomId}) {
 
                 <View style={{alignItems:'center'}}>
                     <TouchableOpacity
-                    onPress={() => {}}
+                    onPress={() => joinRoom()}
                     style={styles.startMeetingButton}
                     >
                     <Text style={{color:'white',fontWeight:'bold'}}>Start A Meeting</Text>
